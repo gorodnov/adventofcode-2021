@@ -6,5 +6,5 @@ If you're going to run this code, you must ~wear your boots~ install [Elixir](ht
 Then run the code like
 
 ```
-elixir day1.ex
+elixir day1/day1.ex
 ```
