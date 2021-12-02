@@ -1,20 +1,4 @@
-defmodule AdventOfCode do
-  def solve(depth_list) do
-    List.last(depth_list |> Enum.reduce([Enum.max(depth_list), 0], &test_depth/2))
-  end
-
-  defp test_depth(depth, acc) do
-    if depth > List.first(acc) do
-      [depth, List.last(acc) + 1]
-    else
-      [depth, List.last(acc)]
-    end
-  end
-end
-
-# IO.inspect AdventOfCode.solve([199,200,208,210,200,207,240,269,260,263])
-
-s = "176
+176
 184
 188
 142
@@ -2013,9 +1997,4 @@ s = "176
 8306
 8317
 8320
-8341"
-
-depth_list = String.split(s, ~r{\n}) |> Enum.map(&String.to_integer/1)
-
-IO.inspect(AdventOfCode.solve(depth_list))
-IO.inspect(depth_list |> Enum.chunk_every(3,1,:discard) |> Enum.map(&Enum.sum/1) |> AdventOfCode.solve())
+8341
