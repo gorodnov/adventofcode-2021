@@ -5,6 +5,7 @@ defmodule AdventOfCode do
     |> List.last()
   end
 
+# TODO use tuple
   def solve2(depth_list) do
     depth_list
     |> Enum.chunk_every(3,1,:discard)
