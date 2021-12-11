@@ -40,10 +40,8 @@ defmodule AdventOfCode do
   end
 end
 
-File.cd("day5")
-
 input =
-  File.stream!("in.txt")
+  File.stream!("#{__DIR__}/in.txt")
   |> Stream.map(&String.split(&1, ~r{,|->|\s}))
   |> Stream.map(&Enum.reject(&1, fn x -> x === "" end))
   |> Stream.map(&Enum.map(&1, fn x -> String.to_integer(x) end))

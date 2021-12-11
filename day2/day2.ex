@@ -36,9 +36,8 @@ defmodule AdventOfCode do
   end
 end
 
-File.cd("day2")
 source =
-  String.split(File.read!("in.txt"), ~r{\n})
+  String.split(File.read!("#{__DIR__}/in.txt"), ~r{\n})
   |> Enum.filter(fn x -> x != "" end)
   |> Enum.map(&String.split/1)
   |> Enum.map(&List.update_at(&1, 1, fn x -> String.to_integer(x) end))

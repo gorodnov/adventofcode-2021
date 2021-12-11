@@ -3,18 +3,16 @@ defmodule AdventOfCode do
     input
     |> Stream.flat_map(fn [pattern, output] -> \
       pattern
-      |> Stream.filter(fn x -> Enum.member?([2, 4, 3, 7], length(x)) end)
+      |> Stream.filter(fn x -> length(x) in [2, 4, 3, 7] end)
       |> then(fn filtered_pattern -> \
-        Stream.filter(output, &(Enum.member?(filtered_pattern, &1)))
+        Stream.filter(output, &(&1 in filtered_pattern))
       end)
     end)
     |> Enum.count()
   end
 end
 
-File.cd("day8")
-
-input = File.stream!("in.txt")
+input = File.stream!("#{__DIR__}/in.txt")
   |> Stream.map(fn line -> \
     String.trim(line)
     |> String.split(~r{\s*\|\s*})

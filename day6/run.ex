@@ -9,10 +9,8 @@ defmodule AdventOfCode do
   end
 end
 
-File.cd("day6")
-
 input =
-  File.read!("in.txt")
+  File.read!("#{__DIR__}/in.txt")
     |> String.trim()
     |> String.split(",")
     |> Enum.map(&String.to_integer/1)

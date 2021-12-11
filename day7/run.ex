@@ -26,10 +26,8 @@ defmodule AdventOfCode do
   defp foo(_), do: 0
 end
 
-File.cd("day7")
-
 input =
-  File.read!("in.txt")
+  File.read!("#{__DIR__}/in.txt")
     |> String.trim()
     |> String.split(",")
     |> Enum.map(&String.to_integer/1)

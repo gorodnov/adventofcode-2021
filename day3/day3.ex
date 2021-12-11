@@ -1,5 +1,5 @@
 defmodule AdventOfCode do
-  # TODO re-do with recursion 
+  # TODO re-do with recursion
   def solve1(numbers, base) do
     gamma =
       Enum.map(0..(base - 1), &common_kind(numbers, &1, :most))
@@ -33,9 +33,8 @@ defmodule AdventOfCode do
   end
 end
 
-File.cd("day3")
 source =
-  String.split(File.read!("in.txt"), ~r{\n})
+  String.split(File.read!("#{__DIR__}/in.txt"), ~r{\n})
   |> Enum.filter(fn x -> x != "" end)
 
 IO.inspect(AdventOfCode.solve1(source, 12))

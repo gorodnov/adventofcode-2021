@@ -56,14 +56,12 @@ defmodule AdventOfCode do
   end
 end
 
-File.cd("day4")
-
 numbers =
-  File.read!("in.txt")
+  File.read!("#{__DIR__}/in.txt")
   |> String.split(~r{[,\n]}, trim: true)
 
 boards =
-  File.stream!("boards.txt")
+  File.stream!("#{__DIR__}/boards.txt")
   |> Stream.map(&String.split/1)
   |> Stream.reject(&Enum.empty?/1)
   |> Stream.chunk_every(5, 5, :discard)

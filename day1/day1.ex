@@ -22,9 +22,8 @@ defmodule AdventOfCode do
   end
 end
 
-File.cd("day1")
 depth_list =
-  String.split(File.read!("in.txt"), ~r{\n})
+  String.split(File.read!("#{__DIR__}/in.txt"), ~r{\n})
   |> Enum.filter(fn x -> x != "" end)
   |> Enum.map(&String.to_integer/1)
 
